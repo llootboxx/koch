@@ -19,6 +19,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Model Viewer for 3D -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -69,14 +71,24 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <h2 class="section-title">Packaging Supply Management System (VMI)</h2>
-                <p class="section-subtitle">ระบบบริหารจัดการบรรจุภัณฑ์อัจฉริยะ</p>
-                <div style="max-width: 800px; margin: 30px auto; text-align: center;">
-                    <p class="section-desc">
-                        ยกระดับการจัดการ Supply Chain ด้วยระบบ Vendor Managed Inventory (VMI)
-                        ที่ออกแบบมาเพื่ออุตสาหกรรมยานยนต์โดยเฉพาะ
-                        ช่วยให้คุณบริหารจัดการสต็อกบรรจุภัณฑ์ได้อย่างแม่นยำ ภายใต้แนวคิด
-                    <p><strong>"Just-In-Time Delivery"</strong></p>
-                    </p>
+
+                <div class="packaging-intro-grid model-left">
+                    <div class="packaging-intro-model">
+                        <model-viewer src="scr/assets/3d model/gear icon/gear+icon.glb" alt="Gear Icon 3D Model"
+                            auto-rotate auto-rotate-delay="0" rotation-per-second="-30deg" disable-zoom
+                            interaction-prompt="none" shadow-intensity="0" camera-orbit="0deg 90deg 170%"
+                            style="width: 100%; height: 250px;">
+                        </model-viewer>
+                    </div>
+                    <div class="packaging-intro-text">
+                        <p class="section-subtitle">ระบบบริหารจัดการบรรจุภัณฑ์อัจฉริยะ</p>
+                        <p class="section-desc">
+                            ยกระดับการจัดการ Supply Chain ด้วยระบบ Vendor Managed Inventory (VMI)
+                            ที่ออกแบบมาเพื่ออุตสาหกรรมยานยนต์โดยเฉพาะ
+                            ช่วยให้คุณบริหารจัดการสต็อกบรรจุภัณฑ์ได้อย่างแม่นยำ ภายใต้แนวคิด
+                        <p><strong>"Just-In-Time Delivery"</strong></p>
+                        </p>
+                    </div>
                 </div>
             </div>
 
