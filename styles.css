@@ -1603,6 +1603,8 @@ p {
 .contact-icon {
   width: 50px;
   height: 50px;
+  min-width: 50px;
+  flex-shrink: 0;
   background: var(--color-primary);
   border-radius: 50%;
   display: flex;
