@@ -36,17 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
       navMenu.classList.toggle('active');
       mobileMenuBtn.classList.toggle('active');
 
-      // Animate hamburger to X
-      const spans = mobileMenuBtn.querySelectorAll('span');
-      if (navMenu.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-      } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
-      }
+      // Animation handled in CSS via .active class
     });
 
     // Close menu when clicking on a link
@@ -56,10 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navMenu.classList.remove('active');
         mobileMenuBtn.classList.remove('active');
 
-        const spans = mobileMenuBtn.querySelectorAll('span');
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '';
-        spans[2].style.transform = '';
+        // Animation handled in CSS via .active class
       });
     });
   }
