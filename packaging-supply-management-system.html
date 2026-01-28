@@ -21,6 +21,28 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Model Viewer for 3D -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+
+    <style>
+        /* Specific grid for Core Functions (2x2 on Desktop) */
+        .core-functions-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .core-functions-grid .vmi-card {
+            margin-bottom: 0;
+            padding: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .core-functions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -77,7 +99,7 @@
                         <model-viewer src="scr/assets/3d model/gear_icon/gear_icon_optimized.glb"
                             alt="Gear Icon 3D Model" auto-rotate auto-rotate-delay="0" rotation-per-second="-15deg"
                             disable-zoom interaction-prompt="none" shadow-intensity="0" camera-orbit="0deg 90deg 100%"
-                            style="width: 100%; height: 150px;">
+                            style="width: 100%; height: 170px;">
                         </model-viewer>
                     </div>
                     <div class="packaging-intro-text">
@@ -93,7 +115,7 @@
             </div>
 
             <div class="vmi-content-wrapper" style="margin-top: 50px;">
-                <h3 class="vmi-benefits-title animate-on-scroll">ทำไมต้องใช้ระบบ VMI ของ KOCH? (Key Benefits)</h3>
+                <h3 class="vmi-benefits-title animate-on-scroll">ทำไมต้องใช้ระบบ VMI ของ KOCH?</h3>
 
                 <div class="vmi-benefits-grid">
                     <!-- Benefit 1 -->
@@ -129,6 +151,114 @@
                         <div class="vmi-card-number">1 pc</div>
                         <h4 class="vmi-card-title">Flexible Ordering </h4>
                         <p class="vmi-card-desc">ยืดหยุ่นสูง<br>รองรับ MOQ เพียง 1 ชิ้น และบริการส่งมอบแบบรายวัน</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Functions Section -->
+            <div class="core-functions-section animate-on-scroll" style="margin-top: 60px; margin-bottom: 60px;">
+                <h3 class="vmi-benefits-title">ฟังก์ชันเด่นของระบบ</h3>
+                <div class="core-functions-grid">
+                    <div class="vmi-card">
+                        <h4 class="vmi-card-title">Order & BOM Matching</h4>
+                        <p class="vmi-card-desc">ระบบอัจฉริยะที่ช่วยจับคู่ชิ้นส่วนกับสเปกบรรจุภัณฑ์เพื่อวางแผนการจัดส่ง
+                        </p>
+                    </div>
+                    <div class="vmi-card">
+                        <h4 class="vmi-card-title">Real-time Reporting</h4>
+                        <p class="vmi-card-desc">ติดตามสถานะได้ตลอดเวลา ทั้งรายงานแผนการส่งรายวันและรายงานสรุปประจำเดือน
+                        </p>
+                    </div>
+                    <div class="vmi-card">
+                        <h4 class="vmi-card-title">Claim System</h4>
+                        <p class="vmi-card-desc">หากพบปัญหา สามารถแจ้งเคลมผ่านระบบได้ทันทีเพื่อความโปร่งใสและรวดเร็ว</p>
+                    </div>
+                    <div class="vmi-card">
+                        <h4 class="vmi-card-title">Smart Confirmation</h4>
+                        <p class="vmi-card-desc">ลูกค้าสามารถยืนยันการรับของ (Actual Receive QTY) ได้ง่ายๆ ผ่านหน้าจอ
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Workflow Section -->
+            <div class="service-workflow-section animate-on-scroll" style="margin-bottom: 80px;">
+                <h3 class="vmi-benefits-title">8 ขั้นตอนสู่ความสำเร็จ (Service Workflow)</h3>
+                <div class="step-image-container" style="text-align: center; margin: 20px 0 40px 0;">
+                    <img src="scr/assets/Gemini_Generated_Image_flow.png" alt="Service Workflow Diagram"
+                        style="max-width: 600px; width: 100%; height: auto; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                </div>
+                <div class="timeline">
+                    <!-- Step 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">01</div>
+                        <div class="timeline-content">
+                            <h4>Upload Part Order</h4>
+                            <p>ลูกค้าอัปโหลดคำสั่งซื้อผ่านระบบ</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">02</div>
+                        <div class="timeline-content">
+                            <h4>BOM Management</h4>
+                            <p>ระบบจับคู่ข้อมูลบรรจุภัณฑ์ตามรายการสินค้า</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">03</div>
+                        <div class="timeline-content">
+                            <h4>View Order</h4>
+                            <p>ตรวจสอบรายละเอียดคำสั่งซื้อแบบเรียลไทม์</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">04</div>
+                        <div class="timeline-content">
+                            <h4>Material List</h4>
+                            <p>สรุปรายการวัสดุที่ต้องใช้ทั้งหมด</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">05</div>
+                        <div class="timeline-content">
+                            <h4>Auto PO Issued</h4>
+                            <p>ออกใบสั่งซื้อโดยอัตโนมัติเพื่อความรวดเร็ว</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">06</div>
+                        <div class="timeline-content">
+                            <h4>Approved PO</h4>
+                            <p>การอนุมัติคำสั่งซื้อผ่านระบบที่เป็นระบบ</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 7 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">07</div>
+                        <div class="timeline-content">
+                            <h4>Delivery</h4>
+                            <p>บริการจัดส่งที่ตรงเวลาและแม่นยำ</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 8 -->
+                    <div class="timeline-item">
+                        <div class="timeline-number">08</div>
+                        <div class="timeline-content">
+                            <h4>Customer Receiving</h4>
+                            <p>ลูกค้ารับมอบบรรจุภัณฑ์พร้อมใช้งานทันที</p>
+                        </div>
                     </div>
                 </div>
             </div>
