@@ -2024,26 +2024,8 @@ p {
    ============================================ */
 .vmi-section {
   background: var(--color-light);
-  /* Alternating background from Services(white) -> VMI(light) -> About(white? wait existing about is light, services is white. maybe make VMI white and change about to white? no, usually alternate. 
-  Services is white. About is light. So VMI should be LIGHT (if placed after Services)?? 
-  Let's check: Services (white), VMI (Light), About (Light -> should change one or keep same background)
-  Actually, let's keep VMI light. Wait, About is light. White -> Light -> Light. 
-  Maybe make VMI white but with a background pattern or just Light to differentiate from Services.
-  Let's stick to Light for VMI and maybe About can be White or keep it Light. 
-  Let's look at the file again. Services(white), About(light). 
-  If I insert VMI between Services and About, it's White -> VMI -> Light. 
-  So VMI should be a different color or image background. 
-  Let's try a very subtle gradient or just white with a separator? 
-  Actually, let's use the Primary Red but very light opacity or just White for now and rely on padding.
-  Wait, Services is White. About is Light. 
-  If VMI is between them, making it Light would merge with About.
-  Let's make VMI White with a different visual style or maybe Light and change About?
-  Let's go with White for VMI but use a background image or pattern if possible. 
-  For now, let's use White and ensure there is separation. 
-  Actually, the user request is just content. 
-  Let's try this: Services (White) -> VMI (Light) -> About (White). 
-  I will modify About to be White if I modify styles.css, or just keep VMI Light.
-  Let's start with VMI as Light. */
+
+
   background-color: #F8F9FA;
   /* Light gray */
 }
