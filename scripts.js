@@ -2,12 +2,11 @@
    KOCH Packaging Website - JavaScript
    ============================================ */
 
-document.addEventListener('DOMContentLoaded', function () {
-
+document.addEventListener("DOMContentLoaded", function () {
   // ============================================
   // Header Scroll Behavior
   // ============================================
-  const header = document.getElementById('header');
+  const header = document.getElementById("header");
   let lastScrollY = window.scrollY;
 
   function handleScroll() {
@@ -15,36 +14,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add/remove scrolled class for styling
     if (currentScrollY > 50) {
-      header.classList.add('scrolled');
+      header.classList.add("scrolled");
     } else {
-      header.classList.remove('scrolled');
+      header.classList.remove("scrolled");
     }
 
     lastScrollY = currentScrollY;
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener("scroll", handleScroll, { passive: true });
 
   // ============================================
   // Mobile Menu Toggle
   // ============================================
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const navMenu = document.getElementById('navMenu');
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const navMenu = document.getElementById("navMenu");
 
   if (mobileMenuBtn && navMenu) {
-    mobileMenuBtn.addEventListener('click', function () {
-      navMenu.classList.toggle('active');
-      mobileMenuBtn.classList.toggle('active');
+    mobileMenuBtn.addEventListener("click", function () {
+      navMenu.classList.toggle("active");
+      mobileMenuBtn.classList.toggle("active");
 
       // Animation handled in CSS via .active class
     });
 
     // Close menu when clicking on a link
-    const navLinks = navMenu.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        navMenu.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
+    const navLinks = navMenu.querySelectorAll(".nav-link");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("active");
+        mobileMenuBtn.classList.remove("active");
 
         // Animation handled in CSS via .active class
       });
@@ -56,12 +55,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   const links = document.querySelectorAll('a[href^="#"]');
 
-  links.forEach(link => {
-    link.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
 
       // Skip if it's just "#"
-      if (href === '#') return;
+      if (href === "#") return;
 
       const target = document.querySelector(href);
 
@@ -69,11 +68,12 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
 
         const headerHeight = header.offsetHeight;
-        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+        const targetPosition =
+          target.getBoundingClientRect().top + window.scrollY - headerHeight;
 
         window.scrollTo({
           top: targetPosition,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
     });
@@ -82,25 +82,25 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   // Scroll Animations (Fade In on Scroll)
   // ============================================
-  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  const animatedElements = document.querySelectorAll(".animate-on-scroll");
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -100px 0px',
-    threshold: 0.1
+    rootMargin: "0px 0px -100px 0px",
+    threshold: 0.1,
   };
 
   const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add("visible");
         // Optionally unobserve after animation
         // observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  animatedElements.forEach(element => {
+  animatedElements.forEach((element) => {
     observer.observe(element);
   });
 
@@ -115,58 +115,60 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Apply staggered animation to service cards
-  animateStaggered('.service-card', 150);
-  animateStaggered('.product-card', 150);
-  animateStaggered('.core-service-item', 100);
-  animateStaggered('.branch-card', 200);
+  animateStaggered(".service-card", 150);
+  animateStaggered(".product-card", 150);
+  animateStaggered(".core-service-item", 100);
+  animateStaggered(".branch-card", 200);
 
   // ============================================
   // Customer Logo Infinite Scroll (Optional)
   // ============================================
-  const customersLogos = document.querySelector('.customers-logos');
+  const customersLogos = document.querySelector(".customers-logos");
 
   if (customersLogos) {
     // Clone logos for infinite scroll effect
     // This is a simple hover pause effect
-    customersLogos.addEventListener('mouseenter', function () {
-      this.style.animationPlayState = 'paused';
+    customersLogos.addEventListener("mouseenter", function () {
+      this.style.animationPlayState = "paused";
     });
 
-    customersLogos.addEventListener('mouseleave', function () {
-      this.style.animationPlayState = 'running';
+    customersLogos.addEventListener("mouseleave", function () {
+      this.style.animationPlayState = "running";
     });
   }
 
   // ============================================
   // Active Navigation Link Highlight
   // ============================================
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll("section[id]");
 
   function highlightNavOnScroll() {
     const scrollY = window.scrollY;
     const headerHeight = header.offsetHeight;
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       const sectionTop = section.offsetTop - headerHeight - 100;
       const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
+      const sectionId = section.getAttribute("id");
 
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         // Remove active from all links
-        document.querySelectorAll('.nav-link').forEach(link => {
-          link.classList.remove('active');
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.classList.remove("active");
         });
 
         // Add active to current section's link
-        const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        const activeLink = document.querySelector(
+          `.nav-link[href="#${sectionId}"]`,
+        );
         if (activeLink) {
-          activeLink.classList.add('active');
+          activeLink.classList.add("active");
         }
       }
     });
   }
 
-  window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
+  window.addEventListener("scroll", highlightNavOnScroll, { passive: true });
 
   // ============================================
   // Counter Animation for Stats
@@ -189,37 +191,49 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Observe stat numbers and animate them when visible
-  const statNumbers = document.querySelectorAll('.stat-number, .stats-box-number');
+  const statNumbers = document.querySelectorAll(
+    ".stat-number, .stats-box-number",
+  );
 
-  const statObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-        const target = parseInt(entry.target.textContent);
-        entry.target.classList.add('animated');
-        animateCounter(entry.target, target, 1500);
-      }
-    });
-  }, { threshold: 0.5 });
+  const statObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach((entry) => {
+        if (
+          entry.isIntersecting &&
+          !entry.target.classList.contains("animated")
+        ) {
+          const target = parseInt(entry.target.textContent);
+          entry.target.classList.add("animated");
+          animateCounter(entry.target, target, 1500);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
 
-  statNumbers.forEach(number => {
+  statNumbers.forEach((number) => {
     statObserver.observe(number);
   });
 
   // ============================================
   // Parallax Effect for Hero Section (Subtle)
   // ============================================
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector(".hero");
 
   if (hero) {
-    window.addEventListener('scroll', function () {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        const heroContent = hero.querySelector('.hero-content');
-        if (heroContent) {
-          heroContent.style.transform = `translateY(${scrollY * 0.1}px)`;
+    window.addEventListener(
+      "scroll",
+      function () {
+        const scrollY = window.scrollY;
+        if (scrollY < window.innerHeight) {
+          const heroContent = hero.querySelector(".hero-content");
+          if (heroContent) {
+            heroContent.style.transform = `translateY(${scrollY * 0.1}px)`;
+          }
         }
-      }
-    }, { passive: true });
+      },
+      { passive: true },
+    );
   }
 
   // ============================================
@@ -227,31 +241,31 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
-  if ('IntersectionObserver' in window) {
+  if ("IntersectionObserver" in window) {
     const imageObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const img = entry.target;
-          img.classList.add('loaded');
+          img.classList.add("loaded");
           imageObserver.unobserve(img);
         }
       });
     });
 
-    lazyImages.forEach(img => imageObserver.observe(img));
+    lazyImages.forEach((img) => imageObserver.observe(img));
   }
 
   // ============================================
   // 3D Model Auto-Reset Position
   // ============================================
-  const cardboardModel = document.getElementById('cardboard-model');
+  const cardboardModel = document.getElementById("cardboard-model");
 
   if (cardboardModel) {
     let resetTimeout = null;
-    const defaultOrbit = '40deg 75deg 8m';
+    const defaultOrbit = "40deg 75deg 8m";
 
     // Track pointer events on the model viewer
-    cardboardModel.addEventListener('pointerdown', function () {
+    cardboardModel.addEventListener("pointerdown", function () {
       // User started interacting - clear any pending reset
       if (resetTimeout) {
         clearTimeout(resetTimeout);
@@ -259,18 +273,18 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    cardboardModel.addEventListener('pointerup', function () {
+    cardboardModel.addEventListener("pointerup", function () {
       // User stopped interacting - schedule reset after 2 seconds
       resetTimeout = setTimeout(function () {
-        cardboardModel.setAttribute('camera-orbit', defaultOrbit);
+        cardboardModel.setAttribute("camera-orbit", defaultOrbit);
       }, 2000);
     });
 
     // Also handle pointer leaving the element
-    cardboardModel.addEventListener('pointerleave', function () {
+    cardboardModel.addEventListener("pointerleave", function () {
       if (resetTimeout === null) {
         resetTimeout = setTimeout(function () {
-          cardboardModel.setAttribute('camera-orbit', defaultOrbit);
+          cardboardModel.setAttribute("camera-orbit", defaultOrbit);
         }, 2000);
       }
     });
@@ -279,18 +293,24 @@ document.addEventListener('DOMContentLoaded', function () {
   // ============================================
   // Console Welcome Message
   // ============================================
-  console.log('%c KOCH Packaging ', 'background: #D32F2F; color: white; font-size: 24px; padding: 10px;');
-  console.log('%c Smart, Fast, and Sustainable! ', 'color: #1A1A2E; font-size: 14px;');
+  console.log(
+    "%c KOCH Packaging ",
+    "background: #D32F2F; color: white; font-size: 24px; padding: 10px;",
+  );
+  console.log(
+    "%c Smart, Fast, and Sustainable! ",
+    "color: #1A1A2E; font-size: 14px;",
+  );
 
   // ============================================
   // Warehouse Carousel
   // ============================================
-  const warehouseCarousel = document.querySelector('.warehouse-carousel');
+  const warehouseCarousel = document.querySelector(".warehouse-carousel");
   if (warehouseCarousel) {
-    const slides = warehouseCarousel.querySelectorAll('.carousel-slide');
-    const dots = warehouseCarousel.querySelectorAll('.carousel-dot');
-    const prevBtn = warehouseCarousel.querySelector('.carousel-prev');
-    const nextBtn = warehouseCarousel.querySelector('.carousel-next');
+    const slides = warehouseCarousel.querySelectorAll(".carousel-slide");
+    const dots = warehouseCarousel.querySelectorAll(".carousel-dot");
+    const prevBtn = warehouseCarousel.querySelector(".carousel-prev");
+    const nextBtn = warehouseCarousel.querySelector(".carousel-next");
     let currentIndex = 0;
     let autoPlayInterval = null;
 
@@ -302,12 +322,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Update slides
       slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === currentIndex);
+        slide.classList.toggle("active", i === currentIndex);
       });
 
       // Update dots
       dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
+        dot.classList.toggle("active", i === currentIndex);
       });
     }
 
@@ -321,14 +341,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listeners
     if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
+      prevBtn.addEventListener("click", function () {
         prevSlide();
         resetAutoPlay();
       });
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
+      nextBtn.addEventListener("click", function () {
         nextSlide();
         resetAutoPlay();
       });
@@ -336,7 +356,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Dot navigation
     dots.forEach((dot, index) => {
-      dot.addEventListener('click', function () {
+      dot.addEventListener("click", function () {
         showSlide(index);
         resetAutoPlay();
       });
@@ -356,13 +376,12 @@ document.addEventListener('DOMContentLoaded', function () {
     startAutoPlay();
 
     // Pause on hover
-    warehouseCarousel.addEventListener('mouseenter', function () {
+    warehouseCarousel.addEventListener("mouseenter", function () {
       clearInterval(autoPlayInterval);
     });
 
-    warehouseCarousel.addEventListener('mouseleave', function () {
+    warehouseCarousel.addEventListener("mouseleave", function () {
       startAutoPlay();
     });
   }
-
 });
