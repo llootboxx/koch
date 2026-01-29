@@ -282,4 +282,87 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log('%c KOCH Packaging ', 'background: #D32F2F; color: white; font-size: 24px; padding: 10px;');
   console.log('%c Smart, Fast, and Sustainable! ', 'color: #1A1A2E; font-size: 14px;');
 
+  // ============================================
+  // Warehouse Carousel
+  // ============================================
+  const warehouseCarousel = document.querySelector('.warehouse-carousel');
+  if (warehouseCarousel) {
+    const slides = warehouseCarousel.querySelectorAll('.carousel-slide');
+    const dots = warehouseCarousel.querySelectorAll('.carousel-dot');
+    const prevBtn = warehouseCarousel.querySelector('.carousel-prev');
+    const nextBtn = warehouseCarousel.querySelector('.carousel-next');
+    let currentIndex = 0;
+    let autoPlayInterval = null;
+
+    function showSlide(index) {
+      // Handle wrapping
+      if (index >= slides.length) index = 0;
+      if (index < 0) index = slides.length - 1;
+      currentIndex = index;
+
+      // Update slides
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    // Event listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        prevSlide();
+        resetAutoPlay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        nextSlide();
+        resetAutoPlay();
+      });
+    }
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', function () {
+        showSlide(index);
+        resetAutoPlay();
+      });
+    });
+
+    // Auto-play
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(nextSlide, 8000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    // Start auto-play
+    startAutoPlay();
+
+    // Pause on hover
+    warehouseCarousel.addEventListener('mouseenter', function () {
+      clearInterval(autoPlayInterval);
+    });
+
+    warehouseCarousel.addEventListener('mouseleave', function () {
+      startAutoPlay();
+    });
+  }
+
 });

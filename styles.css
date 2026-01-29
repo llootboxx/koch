@@ -2103,3 +2103,229 @@ p {
     flex: 0 0 100%;
   }
 }
+
+/* ============================================
+   VMI Page Utilities
+   ============================================ */
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.section-padding {
+  padding: 60px 0;
+}
+
+/* Specific grid for Core Functions (2x2 on Desktop) */
+.core-functions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.core-functions-grid .vmi-card {
+  margin-bottom: 0;
+  padding: 25px;
+}
+
+@media (min-width: 768px) {
+  .core-functions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   Carousel Styles (VMI Benefits)
+   ============================================ */
+.carousel-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.vmi-benefits-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding-bottom: 20px;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+.vmi-benefits-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.vmi-benefits-grid .vmi-card {
+  min-width: 280px;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid #eee;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.carousel-btn.prev {
+  left: -10px;
+}
+
+.carousel-btn.next {
+  right: -10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 0;
+  }
+
+  .carousel-btn {
+    display: none;
+  }
+}
+
+/* ============================================
+   Warehouse Carousel Styles
+   ============================================ */
+.warehouse-carousel {
+  width: 100%;
+  max-width: 100%;
+}
+
+.warehouse-carousel .carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.warehouse-carousel .carousel-slides {
+  position: relative;
+  width: 100%;
+  height: 350px;
+}
+
+.warehouse-carousel .carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.warehouse-carousel .carousel-slide.active {
+  opacity: 1;
+}
+
+.warehouse-carousel .carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.warehouse-carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+  color: var(--color-primary);
+  transition: var(--transition-fast);
+}
+
+.warehouse-carousel .carousel-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.warehouse-carousel .carousel-prev {
+  left: 10px;
+}
+
+.warehouse-carousel .carousel-next {
+  right: 10px;
+}
+
+.warehouse-carousel .carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.warehouse-carousel .carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.warehouse-carousel .carousel-dot.active {
+  background: var(--color-primary);
+}
+
+.warehouse-carousel .carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 992px) {
+  .warehouse-carousel .carousel-slides {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .warehouse-carousel .carousel-slides {
+    height: 220px;
+  }
+
+  .warehouse-carousel .carousel-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
