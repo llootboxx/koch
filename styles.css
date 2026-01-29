@@ -375,7 +375,7 @@ p {
    ============================================ */
 .hero-new {
   padding-top: 80px;
-  padding-bottom: 20px;
+  padding-bottom: 0;
   background: var(--color-white);
   overflow: visible;
 }
@@ -383,7 +383,7 @@ p {
 .hero-new-container {
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 40px 24px 0;
 }
 
 .hero-frame-wrapper {
@@ -631,7 +631,7 @@ p {
    ============================================ */
 .services {
   background: var(--color-white);
-  padding-top: 40px;
+  padding-top: 0;
 }
 
 .services-grid {
