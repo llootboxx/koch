@@ -55,6 +55,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  scroll-padding-top: 180px;
 }
 
 body {
@@ -426,11 +427,9 @@ p {
 /* Old Hero styles kept for backwards compatibility */
 .hero {
   padding-top: 100px;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-primary-dark) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-primary) 0%,
+      var(--color-primary-dark) 100%);
   color: var(--color-white);
   position: relative;
   overflow: hidden;
@@ -963,11 +962,9 @@ p {
    ============================================ */
 .service-detail-hero {
   padding: 150px 0 60px;
-  background: linear-gradient(
-    135deg,
-    var(--color-navy) 0%,
-    var(--color-navy-light) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-navy) 0%,
+      var(--color-navy-light) 100%);
   color: var(--color-white);
 }
 
@@ -2401,4 +2398,13 @@ p {
 .slide-in-left.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Company Page Specific Styles */
+.company-text-content p {
+  margin-bottom: 20px;
+}
+
+.company-text-content p:last-child {
+  margin-bottom: 0;
 }
