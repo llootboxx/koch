@@ -414,7 +414,7 @@ p {
   border-radius: 20px;
   padding: 15px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
-  margin-left: 40px;
+  margin: 0 auto;
 }
 
 .hero-main-image {
