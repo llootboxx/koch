@@ -172,6 +172,139 @@ p {
 }
 
 /* ============================================
+   Utility Classes
+   ============================================ */
+/* Margins */
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.mt-200 {
+  margin-top: 200px;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pt-150 {
+  padding-top: 150px;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+/* Text Alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Backgrounds */
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.bg-navy {
+  background-color: var(--color-navy);
+}
+
+/* Display */
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-none {
+  display: none;
+}
+
+/* Width/Height */
+.w-100 {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+/* Image Utilities */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-rounded {
+  border-radius: var(--radius-md);
+}
+
+/* List Utilities */
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ============================================
    Header / Navigation
    ============================================ */
 .header {
