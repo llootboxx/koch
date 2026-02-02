@@ -2,7 +2,32 @@
    KOCH Packaging Website - Styles
    ============================================ */
 
-/* CSS Variables - Design System */
+/* ============================================
+   TABLE OF CONTENTS
+   ============================================
+   
+   1. CSS Variables (Design System)
+   2. Reset & Base Styles
+   3. Typography
+   4. Layout (Container, Section)
+   5. Header / Navigation
+   6. Hero Section
+   7. Services Section
+   8. About Section
+   9. Stats Section
+   10. Expertise Section
+   11. Products Section
+   12. Technology Section
+   13. Branches Section
+   14. Contact Section
+   15. Footer
+   16. Components (Buttons, Cards, Carousel)
+   17. Animations
+   18. Responsive Breakpoints
+   
+/* ============================================
+   1. CSS VARIABLES (Design System)
+   ============================================ */
 :root {
   /* Colors */
   --color-primary: #d32f2f;
@@ -76,7 +101,7 @@ img {
 a {
   text-decoration: none;
   color: inherit;
-  transition: var(--transition-fast);
+  transition: color var(--transition-fast);
 }
 
 ul,
@@ -139,6 +164,11 @@ p {
   font-size: 1.125rem;
   max-width: 700px;
   margin: 0 auto;
+}
+
+/* Subpage section with header offset - replaces inline style="padding-top: 150px" */
+.section-page-header {
+  padding-top: 150px;
 }
 
 /* ============================================
@@ -660,7 +690,7 @@ p {
     0 0.375em 0 0 #dcdcdc,
     0 0.425em 0 0 #cacaca,
     0 0.425em 0.5em 0 #cecece;
-  transition: 0.15s ease;
+  transition: translate 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
 }
 
@@ -1918,47 +1948,6 @@ p {
 @media (max-width: 768px) {
   :root {
     --section-padding: 60px 0;
-  }
-
-  /* Header Mobile - already handled by 1180px */
-  .header {
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    transform: none;
-    border-radius: 25px;
-    max-width: calc(100% - 20px);
-  }
-
-  .nav {
-    justify-content: space-between;
-    padding: 10px 20px;
-    gap: 15px;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 350px;
-    height: 100vh;
-    background: var(--color-white);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 80px 30px 30px;
-    box-shadow: var(--shadow-xl);
-    transition: var(--transition-medium);
-    gap: 20px;
-    border-radius: 0;
-  }
-
-  .nav-menu.active {
-    right: 0;
-  }
-
-  .mobile-menu-btn {
-    display: flex;
   }
 
   /* Hero Mobile */

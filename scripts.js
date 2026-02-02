@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const header = document.getElementById("header");
   let lastScrollY = window.scrollY;
 
+  /**
+   * Handles scroll events to update header appearance
+   * Adds/removes 'scrolled' class based on scroll position
+   */
   function handleScroll() {
     const currentScrollY = window.scrollY;
 
@@ -107,6 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================
   // Staggered Animation for Multiple Elements
   // ============================================
+  /**
+   * Applies staggered animation delay to multiple elements
+   * @param {string} selector - CSS selector for target elements
+   * @param {number} [delay=100] - Delay between each element's animation in ms
+   */
   function animateStaggered(selector, delay = 100) {
     const elements = document.querySelectorAll(selector);
     elements.forEach((el, index) => {
@@ -142,6 +151,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================
   const sections = document.querySelectorAll("section[id]");
 
+  /**
+   * Highlights navigation link based on current scroll position
+   * Updates 'active' class on nav links when their section is in view
+   */
   function highlightNavOnScroll() {
     const scrollY = window.scrollY;
     const headerHeight = header.offsetHeight;
@@ -173,6 +186,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // ============================================
   // Counter Animation for Stats
   // ============================================
+  /**
+   * Animates a counter from 0 to target value
+   * @param {HTMLElement} element - The element to display the count
+   * @param {number} target - Target number to count to
+   * @param {number} [duration=2000] - Animation duration in milliseconds
+   */
   function animateCounter(element, target, duration = 2000) {
     let start = 0;
     const increment = target / (duration / 16);
@@ -314,6 +333,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     let autoPlayInterval = null;
 
+    /**
+     * Displays the carousel slide at the specified index
+     * @param {number} index - Index of slide to show (will wrap around)
+     */
     function showSlide(index) {
       // Handle wrapping
       if (index >= slides.length) index = 0;
@@ -331,10 +354,12 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    /** Advances to the next carousel slide */
     function nextSlide() {
       showSlide(currentIndex + 1);
     }
 
+    /** Returns to the previous carousel slide */
     function prevSlide() {
       showSlide(currentIndex - 1);
     }
