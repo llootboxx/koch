@@ -795,7 +795,12 @@ p {
   }
 
   .about-model {
-    order: -1;
+    order: 2;
+  }
+
+  .about-model img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
