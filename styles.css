@@ -1477,8 +1477,8 @@ p {
    ============================================ */
 .timeline-section {
   margin-top: 80px;
-  padding-top: 60px;
-  border-top: 1px solid var(--color-border);
+  padding-top: 0;
+  border-top: none;
 }
 
 .timeline-title {
