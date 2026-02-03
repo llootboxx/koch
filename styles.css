@@ -1843,6 +1843,78 @@ p {
 }
 
 /* ============================================
+   Products Category Page Styles
+   ============================================ */
+.page-header {
+  background: linear-gradient(135deg, var(--color-light));
+  color: var(--color-white);
+  padding-bottom: 60px;
+}
+
+.page-header .section-title {
+  color: var(--color-navy);
+}
+
+.page-header .section-subtitle {
+  color: var(--color-gray-light);
+}
+
+.products-category {
+  padding: 80px 0;
+}
+
+.category-header {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.category-icon {
+  font-size: 2rem;
+}
+
+.category-desc {
+  color: var(--color-gray-light);
+  font-size: 1rem;
+  margin: 0;
+  padding-left: 52px;
+}
+
+.products-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 992px) {
+  .products-grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-desc {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .products-grid-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================
    Contact Section
    ============================================ */
 .contact {
