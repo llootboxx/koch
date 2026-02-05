@@ -257,10 +257,6 @@ p {
   background-color: var(--color-light);
 }
 
-.bg-navy {
-  background-color: var(--color-navy);
-}
-
 /* Display */
 .d-block {
   display: block;
@@ -1510,7 +1506,7 @@ p {
    Branches Section
    ============================================ */
 .branches {
-  background: var(--color-light);
+  /* Background color now controlled by utility classes (bg-white, bg-light) */
 }
 
 .branches-intro {
