@@ -409,4 +409,70 @@ document.addEventListener("DOMContentLoaded", function () {
       startAutoPlay();
     });
   }
+
+  // ============================================
+  // Language Switcher (TH/EN)
+  // ============================================
+  /**
+   * Applies translations to all elements with data-i18n or data-i18n-html attributes
+   * @param {string} lang - Language code ('th' or 'en')
+   */
+  function applyLanguage(lang) {
+    // Update text content for elements with data-i18n
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      if (typeof TRANSLATIONS !== "undefined" && TRANSLATIONS[key] && TRANSLATIONS[key][lang]) {
+        el.textContent = TRANSLATIONS[key][lang];
+      }
+    });
+
+    // Update innerHTML for elements with data-i18n-html (supports <strong>, <br>, etc.)
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-html");
+      if (typeof TRANSLATIONS !== "undefined" && TRANSLATIONS[key] && TRANSLATIONS[key][lang]) {
+        el.innerHTML = TRANSLATIONS[key][lang];
+      }
+    });
+
+    // Update html lang attribute
+    document.documentElement.lang = lang === "en" ? "en" : "th";
+
+    // Update all toggle buttons to show the OTHER language label
+    var toggleLabel = lang === "th" ? "EN" : "TH";
+    document.querySelectorAll(".lang-toggle-label").forEach(function (el) {
+      el.textContent = toggleLabel;
+    });
+
+    // Update active state styling
+    document.querySelectorAll(".lang-toggle-btn").forEach(function (btn) {
+      btn.setAttribute("data-current-lang", lang);
+    });
+  }
+
+  /**
+   * Initializes the language switcher
+   */
+  function initLanguageSwitcher() {
+    // Get stored language preference, default to Thai
+    var savedLang = localStorage.getItem("koch-lang") || "th";
+
+    // Apply saved language
+    applyLanguage(savedLang);
+
+    // Attach click handlers to all language toggle buttons
+    document.querySelectorAll(".lang-toggle-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var currentLang = btn.getAttribute("data-current-lang") || "th";
+        var newLang = currentLang === "th" ? "en" : "th";
+        localStorage.setItem("koch-lang", newLang);
+        applyLanguage(newLang);
+      });
+    });
+  }
+
+  // Initialize language switcher if translations loaded
+  if (typeof TRANSLATIONS !== "undefined") {
+    initLanguageSwitcher();
+  }
 });
