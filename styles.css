@@ -823,6 +823,12 @@ p {
   cursor: pointer;
 }
 
+.service-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .service-card:hover {
   translate: 0 0.425em;
   box-shadow:
@@ -1120,6 +1126,8 @@ p {
 .service-card-link .service-card {
   cursor: pointer;
 }
+
+
 
 /* ============================================
    Service Detail Page
@@ -1507,6 +1515,7 @@ p {
    ============================================ */
 .branches {
   /* Background color now controlled by utility classes (bg-white, bg-light) */
+  
 }
 
 .branches-intro {
