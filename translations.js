@@ -306,11 +306,15 @@ var TRANSLATIONS = {
   },
   "contact.address.label": { th: "ที่อยู่", en: "Address" },
   "contact.address.value": {
-    th: "5 หมู่ที่ 2 ตำบลหนองไผ่แก้ว อำเภอบ้านบึง จังหวัดชลบุรี 20220",
-    en: "5 Moo 2, Nong Phai Kaew, Ban Bueng, Chonburi 20220, Thailand",
+    th: "742/5 หมู่ที่ 1 ตำบลหนองไผ่แก้ว อำเภอบ้านบึง จ.ชลบุรี 20220",
+    en: "742/5 Moo 1, Nong Phai Kaeo, Ban Bueng, Chonburi 20220",
   },
   "contact.phone.label": { th: "โทรศัพท์", en: "Phone" },
   "contact.email.label": { th: "อีเมล", en: "Email" },
+  "contact.email.value": {
+    th: "salesteam@koch-packaging.com",
+    en: "salesteam@koch-packaging.com",
+  },
 
   // ============================================
   // Packaging Development Page
