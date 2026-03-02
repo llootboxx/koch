@@ -437,10 +437,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Update html lang attribute
     document.documentElement.lang = lang === "en" ? "en" : "th";
 
-    // Update all toggle buttons to show the OTHER language label
+    // Update all toggle buttons to show the OTHER language label and flag
     var toggleLabel = lang === "th" ? "EN" : "TH";
+    var toggleFlag = lang === "th" ? "🇬🇧" : "🇹🇭";
+
     document.querySelectorAll(".lang-toggle-label").forEach(function (el) {
       el.textContent = toggleLabel;
+    });
+
+    document.querySelectorAll(".lang-globe").forEach(function (el) {
+      el.textContent = toggleFlag;
     });
 
     // Update active state styling
