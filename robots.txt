@@ -1,4 +1,4 @@
-# robots.txt for KOCH Packaging and Packing Services Co.,Ltd
+# robots.txt for KOCH Packaging and Packing Services Co.,Ltds
 # https://koch-packaging-services.com
 
 User-agent: *
